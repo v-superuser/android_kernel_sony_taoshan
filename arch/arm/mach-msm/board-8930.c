@@ -396,7 +396,7 @@ static int __init board_get_hw_id(char *hw_id_str)
 }
 __setup("androidboot.hw_id=", board_get_hw_id);
 // Luke <--
-
+#ifdef CONFIG_CCI_KLOG
 extern int cciaboot_flag;
 extern unsigned long startup_magic_flag;
 extern unsigned long warmboot_magic_flag;
@@ -434,7 +434,7 @@ static int __init board_get_warmboot_flag(char *warmboot_str)
 
 }
 __setup("warmboot=", board_get_warmboot_flag);
-
+#endif /* CONFIG_CCI_KLOG */
 #ifdef CONFIG_KERNEL_MSM_CONTIG_MEM_REGION
 static unsigned msm_contig_mem_size = MSM_CONTIG_MEM_SIZE;
 static int __init msm_contig_mem_size_setup(char *p)
