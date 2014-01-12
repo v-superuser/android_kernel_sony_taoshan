@@ -2221,7 +2221,7 @@ static int msm_fb_commit_thread(void *data)
 			mutex_unlock(&mfd->queue_mutex);
 
 			if (pdata->power_on_panel_at_pan && pdata->on) {
-				(void)pdata->controller_on_panel_on(mfd->pdev);
+				(void)pdata->controller_on_panel_on(mfd);
 				pdata->power_on_panel_at_pan = 0;
 			}
 		}
